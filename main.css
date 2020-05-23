@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #fcf8f3;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container h1 {
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  padding-right: 4%;
+  padding-left: 4%;
+  font-size: 2.3rem;
+  color: #f4ea8e;
+  line-height: 60px;
+}
+
+.container h3 {
+  padding-bottom: 15px;
+}
+
+.container .boxes {
+  width: 700px;
+  height: 550px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.container .boxes .box {
+  width: 210px;
+  height: 210px;
+  border-radius: 20%;
+  border: 12px solid black;
+}
+
+.container .boxes .box:hover {
+  opacity: 0.9;
+}
+
+.container .boxes .box1 {
+  background-color: #e71414;
+  margin-right: 70px;
+}
+
+.container .boxes .box2 {
+  background-color: #5fdde5;
+}
+
+.container .boxes .box3 {
+  background-color: #79d70f;
+  margin-right: 70px;
+  height: 212px;
+}
+
+.container .boxes .box4 {
+  background-color: #ffd31d;
+  height: 212px;
+}
+
+.container .boxes .pressed {
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+  background-color: grey;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 1.5rem;
+  }
+  .container .boxes {
+    width: 500px;
+  }
+  .container .boxes .box1 {
+    margin-right: 30px;
+  }
+  .container .boxes .box3 {
+    margin-right: 30px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
