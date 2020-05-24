@@ -23,21 +23,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .container h1 {
   text-align: center;
-  padding-top: 3%;
-  padding-bottom: 2%;
-  padding-right: 4%;
-  padding-left: 4%;
   font-size: 2.3rem;
   color: #f4ea8e;
   line-height: 60px;
-}
-
-.container h3 {
-  padding-bottom: 15px;
 }
 
 .container .boxes {
@@ -55,7 +50,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
+  margin-top: -75px;
 }
 
 .container .boxes .box {
@@ -81,12 +76,10 @@ body {
 .container .boxes .box3 {
   background-color: #79d70f;
   margin-right: 70px;
-  height: 212px;
 }
 
 .container .boxes .box4 {
   background-color: #ffd31d;
-  height: 212px;
 }
 
 .container .boxes .pressed {

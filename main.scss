@@ -8,24 +8,20 @@ body{
     background-color: #fcf8f3;
 }
 .container{
-
     height: 100vh;
     width: 100vw;
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     h1{
         text-align: center;
-        padding-top: 3%;
-        padding-bottom: 2%;
-        padding-right:4%;
-        padding-left:4%; 
         font-size:2.3rem;
         color: #f4ea8e;
         line-height: 60px;
     }
     h3{
-        padding-bottom:15px;
+        
     }
     .boxes{
         width:700px;
@@ -35,17 +31,15 @@ body{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin-bottom:40px;
+        margin-top:-75px;
         .box{
             width:210px;
             height:210px;
             border-radius:20%;
             border: 12px solid black;
-            
             &:hover{
                 opacity: 0.9;
             }
-            
         }
         .box1{
             background-color: #e71414;
@@ -57,11 +51,9 @@ body{
         .box3{
             background-color: #79d70f;
             margin-right:70px;
-            height:212px;
         }
         .box4{
             background-color: #ffd31d;
-            height:212px;
         }
         .pressed {
             box-shadow: 0 0 15px black;

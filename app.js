@@ -1,6 +1,7 @@
 var body = document.querySelector("body");//BODY SELECTED
 var box = document.querySelectorAll(".box");//BOXES SELECTED
 var header = document.querySelector("#main-title");//HEADER SELECTED
+var levelP = document.querySelector("#score");
 var buttonColours = ["red", "blue", "green", "yellow"];//DEFINED BUTTON COLORS
 var gamePattern = [];//TO KEEPS RANDOM COLORS
 var userClickedPattern = [];//TO KEEPS USERS COLORS
@@ -8,10 +9,13 @@ var userClickedPattern = [];//TO KEEPS USERS COLORS
 var level = 0; //DEFINED LEVEL(First is 0)
 var started = true; //TO CONTROL KEYBOARD
 
+var score = 0;
+
 //TO START THE GAME
 document.addEventListener("keydown", function () {
     if (started) {  //We just used it to start the game.
         //header.innerText = level;
+        levelP.innerText = " ";
         nextSequence();
         started = false;
     }
@@ -50,6 +54,7 @@ for (var i = 0; i < box.length; i++) {
 function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) { //CLICK UNTIL END BUTTON
         if (userClickedPattern.length === gamePattern.length) { //CLICK END BUTTON
+            score++;
             setTimeout(function () {
                 nextSequence();
             }, 1100);
@@ -61,6 +66,7 @@ function checkAnswer(currentLevel) {
             body.classList.remove("game-over");
         }, 300);
 
+        levelP.innerText = "Your score is : " + score;
         header.innerText = "Game Over, Press Any Keyboard Key to Restart";
         startOver();
     }
