@@ -89,4 +89,5 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = true;
+    score = 0;
 }
