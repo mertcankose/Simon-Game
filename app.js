@@ -1,35 +1,36 @@
 var body = document.querySelector("body");//BODY SELECTED
 var box = document.querySelectorAll(".box");//BOXES SELECTED
 var header = document.querySelector("#main-title");//HEADER SELECTED
-var levelP = document.querySelector("#score");
+var startButton = document.querySelector('.start-button');
+var scoreP = document.querySelector("#score");
 var buttonColours = ["red", "blue", "green", "yellow"];//DEFINED BUTTON COLORS
+
 var gamePattern = [];//TO KEEPS RANDOM COLORS
 var userClickedPattern = [];//TO KEEPS USERS COLORS
 
-var level = 0; //DEFINED LEVEL(First is 0)
+var level = 1; //DEFINED LEVEL(First is 0)
 var started = true; //TO CONTROL KEYBOARD
 
 var score = 0;
 
 //TO START THE GAME
-document.addEventListener("keydown", function () {
+startButton.addEventListener("click", function () {
     if (started) {  //We just used it to start the game.
         //header.innerText = level;
-        levelP.innerText = " ";
+        scoreP.innerText = "Skorunuz : 0";
         nextSequence();
-        started = false;
+        started = false; //control keyboard
     }
 });
 
 //SHOWS THE NEXT RANDOM BUTTON
 function nextSequence() {
+    header.style.fontSize = "2.3rem";
     userClickedPattern = [];
-
-    level++;
 
     header.innerText = "Level " + level;
 
-    var randomNumber = Math.floor(Math.random() * 4);
+    var randomNumber = Math.floor(Math.random() * 4); //create random number among 0-3
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour); //ADDING RANDOM COLOR INTO gamePattern
     
@@ -50,11 +51,13 @@ for (var i = 0; i < box.length; i++) {
     });
 }
 
-//MOST IMPORTANT PLACE
+//check answers true or false
 function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) { //CLICK UNTIL END BUTTON
         if (userClickedPattern.length === gamePattern.length) { //CLICK END BUTTON
+            level++;
             score++;
+            scoreP.innerText = "Skorunuz : " + score;
             setTimeout(function () {
                 nextSequence();
             }, 1100);
@@ -66,12 +69,15 @@ function checkAnswer(currentLevel) {
             body.classList.remove("game-over");
         }, 300);
 
-        levelP.innerText = "Your score is : " + score;
-        header.innerText = "Game Over, Press Any Keyboard Key to Restart";
+        
+        
+        header.style.fontSize = "1.4rem";
+        header.innerText = "Oyun Bitti! Yeniden Başlamak İçin Butona Dokunun";
         startOver();
     }
 }
 
+//Animate Button Press
 function animatePress(currentColour) {
     $('#' + currentColour).addClass('pressed');
 
@@ -80,14 +86,17 @@ function animatePress(currentColour) {
     }, 100);
 }
 
+//Play sound function
 function playSound(name) {
     var audio = new Audio('./sounds/' + name + '.mp3');
     audio.play();
 }
 
+//Start Again
 function startOver() {
-    level = 0;
+    level = 1;
     gamePattern = [];
     started = true;
     score = 0;
+    
 }
