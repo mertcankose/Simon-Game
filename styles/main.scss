@@ -6,6 +6,7 @@
 body{
     font-family: 'Press Start 2P', cursive;
     background-color: #fcf8f3;
+    background-image: url("./zenci.jpg");
 }
 .game-over {
     background-color: red;
@@ -13,6 +14,7 @@ body{
 }
 
 .container{
+   
     height: 100vh;
     width: 100vw;
     display:flex;
