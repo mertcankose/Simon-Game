@@ -17,7 +17,7 @@ var score = 0;
 startButton.addEventListener("click", function () {
     if (started) {  //We just used it to start the game.
         //header.innerText = level;
-        scoreP.innerText = "Skorunuz : 0";
+        scoreP.innerText = "SCORE : 0";
         nextSequence();
         started = false; //control keyboard
     }
@@ -57,7 +57,7 @@ function checkAnswer(currentLevel) {
         if (userClickedPattern.length === gamePattern.length) { //CLICK END BUTTON
             level++;
             score++;
-            scoreP.innerText = "Skorunuz : " + score;
+            scoreP.innerText = "SCORE : " + score;
             setTimeout(function () {
                 nextSequence();
             }, 1100);
@@ -72,7 +72,7 @@ function checkAnswer(currentLevel) {
         
         
         header.style.fontSize = "1.4rem";
-        header.innerText = "Oyun Bitti! Yeniden Başlamak İçin Butona Dokunun";
+        header.innerText = "Game Over! Touch The Button To Restart";
         startOver();
     }
 }
