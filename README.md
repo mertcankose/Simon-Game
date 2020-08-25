@@ -10,4 +10,4 @@ The Simon Game-HTML-CSS-JS
 
 <!-- MARKDOWN & IMAGES -->
 
-[product-screenshot1]: screenshots/simongame.png
+[product-screenshot1]: screenshots/thesimongame.png
